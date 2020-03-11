@@ -18,6 +18,7 @@
 		FFCC50E224185F7500106128 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC50E124185F7500106128 /* APIManager.swift */; };
 		FFCC50E5241861C200106128 /* Alamofire+ColdZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC50E4241861C200106128 /* Alamofire+ColdZ.swift */; };
 		FFCC50E7241862F200106128 /* NSError+ColdZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC50E6241862F200106128 /* NSError+ColdZ.swift */; };
+		FFCC50EC24186B0900106128 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC50EB24186B0900106128 /* Feature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FFCC50E124185F7500106128 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FFCC50E4241861C200106128 /* Alamofire+ColdZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+ColdZ.swift"; sourceTree = "<group>"; };
 		FFCC50E6241862F200106128 /* NSError+ColdZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+ColdZ.swift"; sourceTree = "<group>"; };
+		FFCC50EB24186B0900106128 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,16 +90,17 @@
 		FF0CE0F024185BF9002F3981 /* MaskStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				FFCC50EA24186AF900106128 /* Model */,
 				FFCC50E3241861AA00106128 /* Extension */,
-				FFCC50E024185F4800106128 /* Singleton */,
 				FFCC50DF24185F4000106128 /* Service */,
+				FFCC50E024185F4800106128 /* Singleton */,
+				FFCC50E824186AC600106128 /* ViewController */,
+				FFCC50E924186ADD00106128 /* ViewModel */,
 				FF0CE0F124185BF9002F3981 /* AppDelegate.swift */,
-				FF0CE0F324185BF9002F3981 /* ViewController.swift */,
 				FF0CE0F524185BF9002F3981 /* Main.storyboard */,
 				FF0CE0F824185BFA002F3981 /* Assets.xcassets */,
 				FF0CE0FA24185BFA002F3981 /* LaunchScreen.storyboard */,
 				FF0CE0FD24185BFA002F3981 /* Info.plist */,
-				FFCC50DB24185E5300106128 /* ViewModel.swift */,
 			);
 			path = MaskStatistics;
 			sourceTree = "<group>";
@@ -125,6 +128,30 @@
 				FFCC50E6241862F200106128 /* NSError+ColdZ.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FFCC50E824186AC600106128 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FF0CE0F324185BF9002F3981 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FFCC50E924186ADD00106128 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFCC50DB24185E5300106128 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFCC50EA24186AF900106128 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFCC50EB24186B0900106128 /* Feature.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +273,7 @@
 				FFCC50DC24185E5300106128 /* ViewModel.swift in Sources */,
 				FFCC50E224185F7500106128 /* APIManager.swift in Sources */,
 				FFCC50E7241862F200106128 /* NSError+ColdZ.swift in Sources */,
+				FFCC50EC24186B0900106128 /* Feature.swift in Sources */,
 				FFCC50E5241861C200106128 /* Alamofire+ColdZ.swift in Sources */,
 				FFCC50DE24185EEE00106128 /* APIService.swift in Sources */,
 				FF0CE0F224185BF9002F3981 /* AppDelegate.swift in Sources */,
