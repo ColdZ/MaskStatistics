@@ -10,6 +10,8 @@ import Alamofire
 import UIKit
 
 class ViewModel: NSObject {
+    var updatedDataArray: ((_ newDataArray: [Feature]) -> ())!
+    
     lazy var service: APIManager = {
         let service = APIManager()
         bindingService(service)
@@ -30,10 +32,16 @@ class ViewModel: NSObject {
             }
         }
         service.updatedDataArray = { [weak self] (newDataArray) in
+            guard let strongSelf = self else { return }
             let countyMaskCount = newDataArray.reduce(into: [:]) { (result, feature) in
                 result[feature.countyName] = (result[feature.countyName] ?? 0 ) + feature.adultMaskCount
             }
-            print("countyMaskCount:\(countyMaskCount)")
+            var featureArray: [Feature] = []
+            for (countyName, adultMaskCount) in countyMaskCount {
+                let feature = Feature(countyName: countyName, adultMaskCount: adultMaskCount)
+                featureArray.append(feature)
+            }
+            strongSelf.updatedDataArray(featureArray.sorted(by: { $0.adultMaskCount > $1.adultMaskCount }))
         }
         service.receivedError = { (error) in
         }

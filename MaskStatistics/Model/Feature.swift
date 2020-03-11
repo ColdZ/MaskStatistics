@@ -20,4 +20,9 @@ struct Feature {
         self.countyName = countyName
         self.adultMaskCount = adultMaskCount
     }
+    
+    init(countyName: String, adultMaskCount:Int) {
+        self.countyName = countyName.count > 0 ? countyName : "未填寫的縣市"
+        self.adultMaskCount = adultMaskCount
+    }
 }
