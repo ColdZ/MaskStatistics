@@ -14,6 +14,11 @@
 		FF0CE0FC24185BFA002F3981 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0CE0FA24185BFA002F3981 /* LaunchScreen.storyboard */; };
 		FFA0A3702418841900CB3FBE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0A36F2418841900CB3FBE /* TableViewController.swift */; };
 		FFA0A3732418899300CB3FBE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0A3722418899300CB3FBE /* TableViewCell.swift */; };
+		FFA0A3752418A12F00CB3FBE /* Date+ColdZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0A3742418A12F00CB3FBE /* Date+ColdZ.swift */; };
+		FFA0A37A2418A2CE00CB3FBE /* LoadingIndicatorAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0A3792418A2CE00CB3FBE /* LoadingIndicatorAbility.swift */; };
+		FFA0A37E2418A4A200CB3FBE /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0A37C2418A4A200CB3FBE /* LoadingIndicatorView.swift */; };
+		FFA0A37F2418A4A200CB3FBE /* LoadingIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA0A37D2418A4A200CB3FBE /* LoadingIndicatorView.xib */; };
+		FFA0A3812418A4DD00CB3FBE /* UIView+ColdZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0A3802418A4DD00CB3FBE /* UIView+ColdZ.swift */; };
 		FFCC50DC24185E5300106128 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC50DB24185E5300106128 /* ViewModel.swift */; };
 		FFCC50DE24185EEE00106128 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC50DD24185EEE00106128 /* APIService.swift */; };
 		FFCC50E224185F7500106128 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC50E124185F7500106128 /* APIManager.swift */; };
@@ -34,6 +39,11 @@
 		FF0CE0FD24185BFA002F3981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFA0A36F2418841900CB3FBE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FFA0A3722418899300CB3FBE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FFA0A3742418A12F00CB3FBE /* Date+ColdZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ColdZ.swift"; sourceTree = "<group>"; };
+		FFA0A3792418A2CE00CB3FBE /* LoadingIndicatorAbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorAbility.swift; sourceTree = "<group>"; };
+		FFA0A37C2418A4A200CB3FBE /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
+		FFA0A37D2418A4A200CB3FBE /* LoadingIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingIndicatorView.xib; sourceTree = "<group>"; };
+		FFA0A3802418A4DD00CB3FBE /* UIView+ColdZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ColdZ.swift"; sourceTree = "<group>"; };
 		FFCC50DB24185E5300106128 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		FFCC50DD24185EEE00106128 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		FFCC50E124185F7500106128 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -92,6 +102,7 @@
 		FF0CE0F024185BF9002F3981 /* MaskStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				FFA0A3782418A2B200CB3FBE /* Protocol */,
 				FFCC50EA24186AF900106128 /* Model */,
 				FFCC50E3241861AA00106128 /* Extension */,
 				FFCC50DF24185F4000106128 /* Service */,
@@ -111,9 +122,27 @@
 		FFA0A3712418897E00CB3FBE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FFA0A37B2418A48F00CB3FBE /* New Group */,
 				FFA0A3722418899300CB3FBE /* TableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FFA0A3782418A2B200CB3FBE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FFA0A3792418A2CE00CB3FBE /* LoadingIndicatorAbility.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		FFA0A37B2418A48F00CB3FBE /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				FFA0A37C2418A4A200CB3FBE /* LoadingIndicatorView.swift */,
+				FFA0A37D2418A4A200CB3FBE /* LoadingIndicatorView.xib */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		FFCC50DF24185F4000106128 /* Service */ = {
@@ -136,7 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				FFCC50E4241861C200106128 /* Alamofire+ColdZ.swift */,
+				FFA0A3742418A12F00CB3FBE /* Date+ColdZ.swift */,
 				FFCC50E6241862F200106128 /* NSError+ColdZ.swift */,
+				FFA0A3802418A4DD00CB3FBE /* UIView+ColdZ.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -227,6 +258,7 @@
 			files = (
 				FF0CE0FC24185BFA002F3981 /* LaunchScreen.storyboard in Resources */,
 				FF0CE0F924185BFA002F3981 /* Assets.xcassets in Resources */,
+				FFA0A37F2418A4A200CB3FBE /* LoadingIndicatorView.xib in Resources */,
 				FF0CE0F724185BF9002F3981 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,15 +312,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA0A3752418A12F00CB3FBE /* Date+ColdZ.swift in Sources */,
 				FFCC50DC24185E5300106128 /* ViewModel.swift in Sources */,
 				FFCC50E224185F7500106128 /* APIManager.swift in Sources */,
+				FFA0A37E2418A4A200CB3FBE /* LoadingIndicatorView.swift in Sources */,
 				FFCC50E7241862F200106128 /* NSError+ColdZ.swift in Sources */,
 				FFA0A3732418899300CB3FBE /* TableViewCell.swift in Sources */,
 				FFCC50EC24186B0900106128 /* Feature.swift in Sources */,
+				FFA0A3812418A4DD00CB3FBE /* UIView+ColdZ.swift in Sources */,
 				FFCC50E5241861C200106128 /* Alamofire+ColdZ.swift in Sources */,
 				FFCC50DE24185EEE00106128 /* APIService.swift in Sources */,
 				FFA0A3702418841900CB3FBE /* TableViewController.swift in Sources */,
 				FF0CE0F224185BF9002F3981 /* AppDelegate.swift in Sources */,
+				FFA0A37A2418A2CE00CB3FBE /* LoadingIndicatorAbility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

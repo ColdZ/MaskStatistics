@@ -34,8 +34,8 @@ class APIManager {
 }
 
 extension APIManager {
-    
     func fetchData() {
+        guard !isLoading else {return}
         isLoading = true
         manager.request("https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json", method: .get).responseColdZ {[weak self] (dataResponse) in
             guard let strongSelf = self else { return }
@@ -54,7 +54,7 @@ extension APIManager {
         }
     }
     
-    func parseResult(_ result: Result<[String: Any]>) -> Result<[Feature]> {
+    private func parseResult(_ result: Result<[String: Any]>) -> Result<[Feature]> {
         switch result {
         case .success(let rawData):
             var parsedArray: [Feature] = []
@@ -72,7 +72,7 @@ extension APIManager {
         }
     }
     
-    func parseRawData(_ rawData: [String: Any]) throws -> [Feature] {
+    private func parseRawData(_ rawData: [String: Any]) throws -> [Feature] {
         guard let featureRawData = rawData["features"] as? [[String: Any]] else {
             throw NSError.jsonParseError
         }
@@ -81,13 +81,21 @@ extension APIManager {
         return parsedArray
     }
     
-    func parseFeatureRawData(_ rawData: [String: Any]) -> Feature? {
+    private func parseFeatureRawData(_ rawData: [String: Any]) -> Feature? {
         guard let feature = Feature(rawData: rawData) else { return nil }
         return feature
     }
     
-    func filterParsedData(_ parsedArray: [Feature]) -> [Feature]{
-        return parsedArray
+    private func filterParsedData(_ parsedArray: [Feature]) -> [Feature]{
+        let countyMaskCount = parsedArray.reduce(into: [:]) { (result, feature) in
+            result[feature.countyName] = (result[feature.countyName] ?? 0 ) + feature.adultMaskCount
+        }
+        var featureArray: [Feature] = []
+        for (countyName, adultMaskCount) in countyMaskCount {
+            let feature = Feature(countyName: countyName, adultMaskCount: adultMaskCount)
+            featureArray.append(feature)
+        }
+        return featureArray.sorted(by: { $0.adultMaskCount > $1.adultMaskCount })
     }
 }
 
