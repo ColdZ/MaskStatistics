@@ -10,14 +10,14 @@ import UIKit
 
 struct Feature {
     let countyName: String
-    let maskAdultCount: Int
+    let adultMaskCount: Int
     
     init?(rawData: Any){
         guard let rawData = rawData as? [String: Any] else { return nil }
         guard let featureData = rawData["properties"] as? [String: Any] else { return nil }
         guard let countyName = featureData["county"] as? String,
-            let maskAdultCount = featureData["mask_adult"] as? Int else { return nil }
+            let adultMaskCount = featureData["mask_adult"] as? Int else { return nil }
         self.countyName = countyName
-        self.maskAdultCount = maskAdultCount
+        self.adultMaskCount = adultMaskCount
     }
 }

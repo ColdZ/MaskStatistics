@@ -30,7 +30,10 @@ class ViewModel: NSObject {
             }
         }
         service.updatedDataArray = { [weak self] (newDataArray) in
-            print("newDataArray:\(newDataArray)")
+            let countyMaskCount = newDataArray.reduce(into: [:]) { (result, feature) in
+                result[feature.countyName] = (result[feature.countyName] ?? 0 ) + feature.adultMaskCount
+            }
+            print("countyMaskCount:\(countyMaskCount)")
         }
         service.receivedError = { (error) in
         }
