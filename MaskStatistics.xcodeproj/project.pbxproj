@@ -122,7 +122,7 @@
 		FFA0A3712418897E00CB3FBE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FFA0A37B2418A48F00CB3FBE /* New Group */,
+				FFA0A37B2418A48F00CB3FBE /* LoadingIndicatorView */,
 				FFA0A3722418899300CB3FBE /* TableViewCell.swift */,
 			);
 			path = View;
@@ -136,13 +136,13 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		FFA0A37B2418A48F00CB3FBE /* New Group */ = {
+		FFA0A37B2418A48F00CB3FBE /* LoadingIndicatorView */ = {
 			isa = PBXGroup;
 			children = (
 				FFA0A37C2418A4A200CB3FBE /* LoadingIndicatorView.swift */,
 				FFA0A37D2418A4A200CB3FBE /* LoadingIndicatorView.xib */,
 			);
-			path = "New Group";
+			path = LoadingIndicatorView;
 			sourceTree = "<group>";
 		};
 		FFCC50DF24185F4000106128 /* Service */ = {
